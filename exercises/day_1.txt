@@ -2,3 +2,6 @@ basic:
 https://www.practicepython.org/exercise/2014/04/30/13-fibonacci.html
 https://www.practicepython.org/exercise/2014/05/28/16-password-generator.html
 https://www.practicepython.org/exercise/2014/12/27/24-draw-a-game-board.html (all exercises of this)
+
+OOP:
+https://courses.cs.tau.ac.il/pyProg/2223a/
