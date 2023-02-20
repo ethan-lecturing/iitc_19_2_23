@@ -1,0 +1,3 @@
+Numpy:
+1. Choose an image from the internet as you like. Convert it to grayscale using rgb2gray
+   As was done in the file convolution.py . Afterwards, Convert all the 

@@ -9,8 +9,15 @@ def rgb2gray(rgb):
 
 img = mpimg.imread('elon.jpg')
 gray = rgb2gray(img)
-only_black_and_white = (gray > 160) * 255
-plt.imshow(only_black_and_white, cmap=plt.get_cmap('gray'))
+old_mat = gray.copy()
+gray[gray < 255 / 3] = 0
+gray[(gray < 255 * 2 / 3) & (gray > 255 / 3)] = 128
+gray[255 * 2 / 3 < gray] = 255
+
+# only_black_and_white = (gray > 160) * 255
+plt.imshow(np.hstack((old_mat, gray)), cmap=plt.get_cmap('gray'))
+
+# plt.imshow(gray, cmap=plt.get_cmap('gray'))
 plt.show()
 
 # plt.imshow(gray / 255, cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
