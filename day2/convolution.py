@@ -21,16 +21,17 @@ def average_picture(img, dx=1, dy=1):
     for i in range(img.shape[0]):
         for j in range(img.shape[1]):
             neighborhood = get_neighborhood(img, i, j, dx, dy)
-            neighborhood_mean = neighborhood.mean()
+            neighborhood_mean = neighborhood.max()
             new_img[i, j] = neighborhood_mean
     return new_img
 
 
-img = mpimg.imread('elon.jpg')
+img = mpimg.imread('majin.jpeg')
 gray = rgb2gray(img)
-avg_gray = average_picture(gray,10,10)
+original = gray.copy()
+avg_gray = average_picture(gray,1,1)
 
-plt.imshow(avg_gray, cmap=plt.get_cmap('gray'))
+plt.imshow(np.hstack((original,avg_gray)), cmap=plt.get_cmap('gray'))
 plt.show()
 
 # plt.imshow(gray / 255, cmap=plt.get_cmap('gray'), vmin=0, vmax=1)
