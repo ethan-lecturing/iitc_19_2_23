@@ -53,9 +53,10 @@ def wait_and_insert():
     q.push('some value')
 
 
-threading.Thread(target=wait_and_insert).start()
-x = q.b_pop()
-print('The popped item is:', x)
-print('Trying to pop another one:')
-x = q.b_pop()
-print(x)
+if __name__ == '__main__':
+    threading.Thread(target=wait_and_insert).start()
+    x = q.b_pop()
+    print('The popped item is:', x)
+    print('Trying to pop another one:')
+    x = q.b_pop()
+    print(x)
